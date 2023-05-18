@@ -1,6 +1,6 @@
 <?php 
     require_once 'persistencia/Conexion.php';
-    require_once 'persistencia/Clientesql.php';
+    require_once 'persistencia/ClienteDAO.php';
     
     class Cliente {
                                         

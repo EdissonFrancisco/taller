@@ -1,5 +1,5 @@
 <?php
-	require 'logica/Cliente.php';
+	
     $error = 0;
     if (isset($_GET["error"])) {
     	$error = $_GET["error"];
@@ -58,7 +58,7 @@
 
 				<div id="login" style="left: auto;">
 					<!-- formulario login -->
-					<form method="POST" class="input-group" action="<?php echo "index.php?pid=" . base64_encode('presentacion/autenticar.php') ?>">
+					<form method="POST" class="input-group" action="manejoDatos/autenticar.php'">
 						<!-- contenido formulario login -->
 						<div class="mb-4 input-group">
 							<input type="email" name="correo" class="form-control" placeholder="Correo" required="required">
@@ -69,11 +69,11 @@
 						<div class="d-grid input-group">
 							<button type="submit" class="btn btn-primary">Autenticar</button>
 						</div>
-						<div class="row my-2 input-group">
+						<!-- <div class="row my-2 input-group">
 							<div class="col text-center">
-								<a href="<?php echo "index.php?pid=" . base64_encode("presentacion/recuperarClave.php") ?>">Recuperar clave</a>
+								<a href="<?php //echo "index.php?pid=" . base64_encode("presentacion/recuperarClave.php") ?>">Recuperar clave</a>
 							</div>
-						</div>
+						</div> -->
 					</form> <!-- fin contenido formulario -->
 					<br><br><br>
 					<!-- errores de ingreso -->
@@ -90,7 +90,7 @@
 
 				<div id="registro">
 					<!-- formulario registro -->
-					<form method="POST" class="input-group" action="<?php echo "index.php?pid=" . base64_encode('presentacion/registro.php') ?>">
+					<form method="POST" class="input-group" action="manejoDatos/registro.php">
 						<!-- contenido formulario registro -->
 						<div class="mb-4 input-group">
 							<input type="text" name="nombre" class="form-control" placeholder="Nombre" required="required">
@@ -134,64 +134,7 @@
 		</div>
 	</div>
 
-	<script>
-		//acciones de botones
-		let btnlog = document.getElementById("btnLog"); //variable almacenar referencia a id del div
-		let btnreg = document.getElementById("btnReg");
-
-		//funcion auto click
-		$(document).ready(function() {
-
-			setTimeout(clickbutton, 2); // indicamos que se ejecuta la función a los 2 segundos de haberse cargado la pagina
-			function clickbutton() {
-				btnlog.click(); // simulamos el click del mouse en el boton del formulario login
-			}
-			//carga los mensajes de alerta por errores de ingreso o registro
-			if (!errores) {
-				setTimeout(clickbutton, 2); // indicamos que se ejecuta la función a los 2 segundos de haberse cargado la pagina
-				function clickbutton() {
-					btnlog.click(); // simulamos el click del mouse en el boton del formulario login
-				}
-			} else if (errores == 1) { //error de correo o clave que no existen
-				setTimeout(clickbutton, 2); // indicamos que se ejecuta la función a los 2 segundos de haberse cargado la pagina
-				function clickbutton() {
-					btnlog.click(); // simulamos el click del mouse en el boton del formulario registro
-				}
-			}else if (errores == 2) { //error de correo existente en registro
-				setTimeout(clickbutton, 2); // indicamos que se ejecuta la función a los 2 segundos de haberse cargado la pagina
-				function clickbutton() {
-					btnreg.click(); // simulamos el click del mouse en el boton del formulario registro
-				}
-			}else if (errores == 3) { //cuenta ingresada con exito
-				setTimeout(clickbutton, 2); // indicamos que se ejecuta la función a los 2 segundos de haberse cargado la pagina
-				function clickbutton() {
-					btnreg.click(); // simulamos el click del mouse en el boton del formulario registro
-				}
-			}
-		});
-
-		//eventos para validar que se haga click
-		btnlog.addEventListener("click", login);
-		btnreg.addEventListener("click", registro);
-		
-		//aciones de formularios (variables)
-		var x = document.getElementById("login");
-		var y = document.getElementById("registro");
-		var z = document.getElementById("btn");
-		//funciones formulariio
-		function login() {
-			x.style.left = "20px";
-			y.style.left = "1000px";
-			z.style.left = "0";
-		}
-
-		function registro() {
-			x.style.left = "-1000px";
-			y.style.left = "20px";
-			z.style.left = "100px";
-		}
-		
-	</script>
+	<script src="javaScript.js"></script>
 
 </body>
 
