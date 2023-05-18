@@ -1,7 +1,8 @@
 <?php
     include 'conexion.php';
-    $sentencia =  "SELECT  id, nombre, apellido, cedula FROM usuarios";
-    $query = mysqli_query($conexion, $sentencia);
+    $db = conectarDB();
+    $sentencia =  "SELECT  id, nombre, apellido, cedula	FROM usuarios";
+    $query = mysqli_query($db, $sentencia);
     
 ?>
 
@@ -36,30 +37,21 @@
                 </tr>
             </thead>
             <tbody>
-            <tr>
-				<td>Anna Müller   1</td>
-				<td>anna.mueller@gmail.com</td>
-				<td>0123456789</td>
-				<td>99 Eur</td>
-			</tr>
                 <?php
-                    while ($datos = mysql_fetch_array($query)) {
-                        
+                    while ($datos = mysqli_fetch_assoc($query)) {
                         $id = $datos['id'];
-                        echo $id;
                         $nombre = $datos["nombre"];
                         $apellido = $datos['apellido'];
                         $cedula = $datos['cedula'];
-                    ?>
+                        echo '
                         <tr>
-                            <td>Anna Müller</td>
-                            <td>anna.mueller@gmail.com</td>
-                            <td>0123456789</td>
-                            <td>99 Eur</td>
-                        </tr>'
-                    <?php
+                            <td>' . $id . '</td>
+                            <td>' . $nombre . '</td>
+                            <td>' . $apellido . '</td>
+                            <td>' . $cedula . '</td>
+                        </tr>';
                     }
-                    ?>
+                ?>
             </tbody>
         </table>
         <!-- follow me template -->

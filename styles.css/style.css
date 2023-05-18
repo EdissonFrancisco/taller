@@ -1,80 +1,86 @@
-.enjoy-css {
-    display: inline-block;
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
-    padding: 10px 20px;
-    border: 1px solid #b7b7b7;
-    -webkit-border-radius: 13px;
-    border-radius: 13px;
-    font: normal 16px/normal "Times New Roman", Times, serif;
-    color: rgba(0, 142, 198, 1);
-    -o-text-overflow: clip;
-    text-overflow: clip;
-    background: rgba(252, 252, 252, 1);
-    -webkit-box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.2) inset;
-    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.2) inset;
-    text-shadow: 0 0 0 rgba(255, 255, 255, 0.66);
-    -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
-    -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
-    -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
-    transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
-    -webkit-transform: rotateX(0.5729577951308232deg) rotateY(-18.907607239317166deg);
-    transform: rotateX(0.5729577951308232deg) rotateY(-18.907607239317166deg);
+/*fondo*/
+.fondo-loging {
+  background: #0c0c0c;
+  background: linear-gradient(to right, #351313, #c57a18);
 }
 
-.button {
-    font-family: arial;
-    color: #ffffff ;
-    font-size: 14px;
-    text-shadow: 1px 1px 0px #185E8C;
-    box-shadow: 5px 5px 3px #BEE2F9;
-    padding: 14px 17px;
-    border-radius: 17px;
-    border: 0px solid #3866A3;
-    background: #0199D9;
-}
-.button:hover {
-    color: #1F136A !important;
-    background: #5946CF;
-    background: linear-gradient(to top, #5946CF, #7E62EE);
+/*imagen*/
+.bg {
+  background-image: url(../img/fondoInicio.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-/* Estilos de tabla */
-
-h2 {
-  margin-bottom: 50px;
-}
-
-.container {
-  text-align: center;
+/*caja de formularios*/
+.form-box {
+  height: 560px;
+  position: relative;
+  margin: auto;
+  background: #fff;
+  background: rgba(0, 0, 0, 0.6);
   overflow: hidden;
-  width: 800px;
-  margin: 0 auto;
 }
 
-.container table {
-  width: 100%;
+.containerMT {
+  width: 50%;
 }
 
-.container td, .container th {
+/*botones de inio y registro*/
+.butonbox {
+  /*caja de botones*/
+  width: 210px;
+  margin: 35px auto;
+  position: relative;
+  box-shadow: 0 0 20px 9px #ff61241f;
+  /*sombra al rededor de boton*/
+  border-radius: 30px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.toggle-btn {
+  /*alternar botones*/
   padding: 10px;
-}
-
-.container td:first-child, .container th:first-child {
-  padding-left: 20px;
-}
-
-.container td:last-child, .container th:last-child {
-  padding-right: 20px;
-}
-
-.container th {
-  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  outline: none;
   position: relative;
 }
 
-/*estilo imagen */
-img{
-  width: 3rem;
+#btn {
+  /*estilo y color de boton*/
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 120px;
+  height: 100%;
+  background: linear-gradient(to right, #ff105f, #ffad06);
+  border-radius: 30px;
+  transition: .5s;
+}
+
+/*formularios Inicio*/
+.input-group {
+  top: 30px;
+  position: absolute;
+  width: 300px;
+  transition: .5s;
+}
+
+#login {
+  top: 210px;
+  position: absolute;
+  width: 90%;
+  transition: .5s;
+  left: 1000;
+}
+
+#registro {
+  top: 210px;
+  position: absolute;
+  width: 90%;
+  transition: .5s;
+  margin-left: 1000;
 }
