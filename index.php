@@ -1,5 +1,6 @@
 <?php
-	
+	session_start();
+	include 'logica/Cliente.php';
     $error = 0;
     if (isset($_GET["error"])) {
     	$error = $_GET["error"];

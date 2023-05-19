@@ -1,6 +1,7 @@
 <?php 
-    require '../logica/Cliente.php';
-    require '../logica/TelCliente.php';
+    require_once '../logica/Cliente.php';
+    require_once '../logica/TelCliente.php';
+    
     /** variables donde recibo los datos del formulario */
     $nombre = $_POST["nombre"];
     $apellido = $_POST["apellido"];

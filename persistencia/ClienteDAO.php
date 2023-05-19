@@ -45,4 +45,11 @@
                     FROM cliente
                     WHERE correo = '" . $this -> correo . "' and clave = md5('" . $this -> clave . "')";
         }
+
+        function consultar() {
+            return "select nombre, apellido 	
+                from cliente
+                where idCliente = '" . $this -> idCliente . "'";
+        }
+
     }

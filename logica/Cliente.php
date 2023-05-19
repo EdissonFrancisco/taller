@@ -1,6 +1,6 @@
 <?php 
-    require_once '../persistencia/Conexion.php';
-    require_once '../persistencia/ClienteDAO.php';
+    require_once 'persistencia/Conexion.php';
+    require_once 'persistencia/ClienteDAO.php';    
     
     class Cliente {
                                         
@@ -105,4 +105,14 @@
                 return false;
             }
         }
+
+        function consultar() {/* consulto los datos prinsipales del cliente: nombre apellido correo estado */
+            $this -> conecxion -> abrir();
+            $this -> conecxion -> ejecutar($this -> clienteDAO -> consultar());
+            $this -> conecxion -> cerrar();
+            $resultado = $this -> conecxion -> extraer();
+            $this -> nombre = $resultado[0];
+            $this -> apellido = $resultado[1];
+        }
+
     }
