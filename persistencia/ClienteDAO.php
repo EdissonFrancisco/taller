@@ -9,7 +9,7 @@
         private $clave;
         private $estado;
 
-        public function ClienteDAO($pIdCliente, $pNombre, $pApellido, $pNit_cc, $pDireccion, $pCorreo, $pClave, $pEstado) {
+        public function __construct($pIdCliente, $pNombre, $pApellido, $pNit_cc, $pDireccion, $pCorreo, $pClave, $pEstado) {
             $this -> idCliente = $pIdCliente;
             $this -> nombre = $pNombre;
             $this -> apellido = $pApellido;

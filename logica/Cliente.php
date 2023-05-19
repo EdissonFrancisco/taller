@@ -1,6 +1,6 @@
 <?php 
-    require_once 'persistencia/Conexion.php';
-    require_once 'persistencia/ClienteDAO.php';
+    require_once '../persistencia/Conexion.php';
+    require_once '../persistencia/ClienteDAO.php';
     
     class Cliente {
                                         
@@ -12,7 +12,7 @@
         private $correo;
         private $clave;
         private $estado;
-        private $conecxion;
+        private $conexion;
         private $clienteDAO;
 
         public function getIdCliente()
@@ -55,7 +55,7 @@
             return $this->estado;
         }
 
-        public function Cliente($pIdCliente="", $pNombre="", $pApellido="", $pNit_cc="", $pDireccion="", $pCorreo="", $pClave="", $pEstado="") {
+        public function __construct($pIdCliente="", $pNombre="", $pApellido="", $pNit_cc="", $pDireccion="", $pCorreo="", $pClave="", $pEstado="") {
             $this -> idCliente = $pIdCliente;
             $this -> nombre = $pNombre;
             $this -> apellido = $pApellido;
@@ -64,16 +64,16 @@
             $this -> correo = $pCorreo;
             $this -> clave = $pClave;
             $this -> estado = $pEstado;
-            $this -> conecxion = new Conexion();
+            $this->conexion = new Conexion();
             $this -> clienteDAO = new ClienteDAO($this->idCliente, $this->nombre, $this->apellido, $this->nit_cc, $this->direccion, $this->correo, $this->clave, $this->estado);
         }
         
         public function validar($pCorreo) {/** consulta que el correo no se encuentre registrado */
-            $this -> conecxion -> abrir();
-            $this -> conecxion -> ejecutar($this -> clienteDAO -> validar($pCorreo));
-            $this -> conecxion -> cerrar();
-            if($this -> conecxion -> numFilas() == 1){
-                $this -> idTelCli = $this -> conecxion -> extraer()[0];
+            $this->conexion->abrir();
+            $this -> conexion -> ejecutar($this -> clienteDAO -> validar($pCorreo));
+            $this -> conexion -> cerrar();
+            if($this -> conexion -> numFilas() == 1){
+                $this -> idTelCli = $this -> conexion -> extraer()[0];
                 return true;
             }else{
                 return false;
@@ -81,25 +81,25 @@
         }
 
         function crearCliente($nombre, $apellido, $CC, $direc, $correo, $clave){/** inserta datos de cliente en la BD */
-            $this -> conecxion -> abrir();
-            $this -> conecxion -> ejecutar($this -> clienteDAO -> crearCliente($nombre, $apellido, $CC, $direc, $correo, $clave));
-            $this -> conecxion -> cerrar();
+            $this -> conexion -> abrir();
+            $this -> conexion -> ejecutar($this -> clienteDAO -> crearCliente($nombre, $apellido, $CC, $direc, $correo, $clave));
+            $this -> conexion -> cerrar();
         }
         
         function consultarID() {
-            $this -> conecxion -> abrir();
-            $this -> conecxion -> ejecutar($this -> clienteDAO -> consultarID());
-            $this -> conecxion -> cerrar();
-            $resultado = $this -> conecxion -> extraer()[0];
+            $this -> conexion -> abrir();
+            $this -> conexion -> ejecutar($this -> clienteDAO -> consultarID());
+            $this -> conexion -> cerrar();
+            $resultado = $this -> conexion -> extraer()[0];
             return $resultado;
         }
         
         function autentica() {
-            $this -> conecxion -> abrir();
-            $this -> conecxion -> ejecutar($this -> clienteDAO -> autenticar());
-            $this -> conecxion -> cerrar();
-            if($this -> conecxion -> numFilas() == 1){
-                $this -> idCliente = $this -> conecxion -> extraer()[0];
+            $this -> conexion -> abrir();
+            $this -> conexion -> ejecutar($this -> clienteDAO -> autenticar());
+            $this -> conexion -> cerrar();
+            if($this -> conexion -> numFilas() == 1){
+                $this -> idCliente = $this -> conexion -> extraer()[0];
                 return true;
             }else{
                 return false;

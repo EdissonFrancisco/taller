@@ -6,13 +6,12 @@
     }
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<!-- Bootstrap CSS -->
+	<!-- Bootstrap y CSS -->
 	<link rel="stylesheet" href="styles.css/normalize.css">
 	<link rel="stylesheet" href="styles.css/style.css">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -58,7 +57,7 @@
 
 				<div id="login" style="left: auto;">
 					<!-- formulario login -->
-					<form method="POST" class="input-group" action="manejoDatos/autenticar.php'">
+					<form method="POST" class="input-group" action="manejoDatos/autenticar.php">
 						<!-- contenido formulario login -->
 						<div class="mb-4 input-group">
 							<input type="email" name="correo" class="form-control" placeholder="Correo" required="required">
@@ -86,7 +85,7 @@
 						<br>
 					<?php } ?>
 					<!-- fin errores ingreso -->
-				</div>
+				</div><!-- fin formulario login -->
 
 				<div id="registro">
 					<!-- formulario registro -->
@@ -134,7 +133,7 @@
 		</div>
 	</div>
 
-	<script src="javaScript.js"></script>
+	<script src='javaScript.js'></script>
 
 </body>
 
