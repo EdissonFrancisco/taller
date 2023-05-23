@@ -23,7 +23,7 @@
         <div class="logo">
             <img src="../img/logoli.png" alt="Logo de la marca">
         </div>
-        <a class="btn" href="#"><button>Salir</button></a>
+        <a class="btn" href="../index.php?sesion=''"><button>Salir</button></a>
     </header>
 
     <main class="fondo container">
