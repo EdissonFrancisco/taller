@@ -1,4 +1,5 @@
 <?php 
+    session_start();
     require_once '../logica/Cliente.php';
 
     $correo = $_POST["correo"];
@@ -8,7 +9,9 @@
                 
     if ($cliente -> autentica()) {
         $_SESSION["id"] = $cliente -> getIdCliente();
-        header("Location: ../sessionCliente.php");
+        if (isset($_SESSION["id"])) {
+            header("Location: sessionCliente.php");
+        }        
     } else {
         header("Location: ../index.php?error=1");//error de correo o clave
     }

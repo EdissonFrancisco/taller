@@ -19,7 +19,7 @@ class Conexion {
 
             $this->mysqli->set_charset('utf8');
 
-            echo $this->mysqli->host_info . "\n";
+            //echo $this->mysqli->host_info . "\n";
 
             return $this->mysqli;
         } catch (Exception $e) {

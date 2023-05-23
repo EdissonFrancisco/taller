@@ -1,6 +1,12 @@
 <?php
 	session_start();
-	include 'logica/Cliente.php';
+	// include 'logica/Cliente.php';
+	// require 'logica/TelCliente.php';
+
+	if (isset($_GET["sesion"]) && $_GET["sesion"] == 0) {
+	    $_SESSION["id"] = "";
+	}
+
     $error = 0;
     if (isset($_GET["error"])) {
     	$error = $_GET["error"];
